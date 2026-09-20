@@ -1,0 +1,20 @@
+{
+  "name": "Checkers - لعبة الدامة",
+  "short_name": "Checkers",
+  "description": "لعبة الدامة الكلاسيكية",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#3a2416",
+  "theme_color": "#3a2416",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

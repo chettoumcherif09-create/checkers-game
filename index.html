@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#3a2416">
+  <title>♟️ لعبة الدامة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="startScreen">
+    <div class="start-panel">
+      <h1 class="game-title" id="txtTitle">♟️ الدامة</h1>
+      <p class="subtitle" id="txtChooseMode">اختر وضع اللعب</p>
+
+      <button class="mode-btn" id="btnContinue" style="display:none;">▶️ متابعة</button>
+      <button class="mode-btn" id="btnPvP">👥 لاعب ضد لاعب</button>
+      <button class="mode-btn" id="btnPvAI">🤖 لاعب ضد الحاسوب</button>
+
+      <div id="aiOptions" class="hidden">
+        <p class="subtitle" id="txtDifficulty">مستوى الصعوبة:</p>
+        <button class="level-btn" id="btnEasy">🟢 سهل</button>
+        <button class="level-btn" id="btnMedium">🟡 متوسط</button>
+        <button class="level-btn" id="btnHard">🔴 صعب</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="app">
+    <header id="topbar">
+      <div class="player-time" id="redTime"><span>🔴</span><strong>05:00</strong></div>
+      <h1 id="txtTopTitle">♟️ الدامة</h1>
+      <div class="player-time" id="blackTime"><span>⚫</span><strong>05:00</strong></div>
+    </header>
+    <main id="game-area"><canvas id="board"></canvas></main>
+    <footer id="statusbar">
+      <button id="undoBtn" class="action-btn">↩️</button>
+      <span id="turn-indicator">🔴 دور اللاعب الأحمر</span>
+      <button id="statsBtn" class="action-btn">📊</button>
+    </footer>
+  </div>
+
+  <button id="themeBtn" class="theme-btn">🎨</button>
+  <button id="settingsBtn" class="settings-btn">⚙️</button>
+  <button id="langBtn" class="lang-btn">🌐</button>
+
+  <div id="themePicker" class="theme-picker hidden">
+    <div class="theme-title" id="txtThemeTitle">اختر الثيم</div>
+    <button class="theme-option" data-theme="wood">🪵 خشبي</button>
+    <button class="theme-option" data-theme="modern">💎 حديث</button>
+    <button class="theme-option" data-theme="night">🌙 ليلي</button>
+    <button class="theme-option" data-theme="nature">🌿 طبيعة</button>
+  </div>
+
+  <div id="settingsOverlay" class="hidden">
+    <div class="settings-panel">
+      <h2 id="txtSettings">⚙️ الإعدادات</h2>
+      <div class="setting-item">
+        <span id="txtSound">🔊 الصوت</span>
+        <button class="toggle-btn" id="soundToggle">✅ تشغيل</button>
+      </div>
+      <div class="setting-item">
+        <span id="txtVibration">📳 الاهتزاز</span>
+        <button class="toggle-btn" id="vibrationToggle">✅ تشغيل</button>
+      </div>
+      <button class="menu-back-btn" id="closeSettingsBtn">إغلاق</button>
+    </div>
+  </div>
+
+  <div id="gameOverOverlay" class="hidden">
+    <div class="game-over-panel">
+      <div class="trophy">🏆</div>
+      <h2 id="winnerText">فاز اللاعب الأحمر</h2>
+      <p id="statsText"></p>
+      <button id="playAgainBtn">🔄 العب مرة أخرى</button>
+      <button id="backToMenuBtn" class="menu-back-btn">🏠 القائمة الرئيسية</button>
+    </div>
+  </div>
+
+  <div id="statsOverlay" class="hidden">
+    <div class="stats-panel">
+      <h2 id="txtStats">📊 الإحصائيات</h2>
+      <div class="stats-grid">
+        <div class="stat-item"><span id="txtMoves">🎯 الحركات</span><strong id="statMoves">0</strong></div>
+        <div class="stat-item"><span id="txtCaptures">🍽️ الأكلات</span><strong id="statCaptures">0</strong></div>
+        <div class="stat-item"><span id="txtPromotions">👑 الترقيات</span><strong id="statPromotions">0</strong></div>
+        <div class="stat-item"><span id="txtTimeStat">⏱️ الوقت</span><strong id="statTime">00:00</strong></div>
+        <div class="stat-item"><span id="txtRedStat">🔴 حمراء</span><strong id="statRed">12</strong></div>
+        <div class="stat-item"><span id="txtBlackStat">⚫ سوداء</span><strong id="statBlack">12</strong></div>
+      </div>
+      <button id="closeStatsBtn" class="menu-back-btn">إغلاق</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
